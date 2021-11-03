@@ -41,7 +41,7 @@ console.log(Testsplice);
 const TestspliceA = [90,3,4,2,6,7];
 console.log(Testsplice.splice(4,2));
 
-const Testreduce = [1,90,3,4,5,6,7].reduce((acc, item) => item - acc,-84);
+const Testreduce = [1,90,3,4,5,6,7].reduce((acc, item) => item - acc);
 console.log(Testreduce);
 
 const TestEntries = {value: 'biron', key:'RPC'};
@@ -49,6 +49,37 @@ console.log('aaa',Object.entries(TestEntries));
 console.log('aaa',Object.keys(TestEntries));
 console.log('aaa',Object.values(TestEntries));
 
-const matriz1 = {}; 
+const array1 = [1,2,3,4,5];
+const array2 = [...array1,6,7,8,9,10];
+console.log("Spread",array2);
+
+const person1 = {name: 'Biron', age: 28};
+const person2 = {data:'Ari', data2:2, ...person1};
+console.log(person2);
+
+const person3 = {
+  name: 'Biron', 
+  age: 28,
+  data:'Ari', 
+  data2:2, 
+  response:200
+};
+
+const {age:edad} = person3;
+
+console.log("edad = ",edad);
+
+// Convertir a ARRAY Y SUMAR PARES
+const a = {1:'a',2:'a',3:'a',4:'a',5:'a',6:'a'}
+const arraya = Object.keys(a).map(n => parseInt(n));
+const filtraa = arraya.filter(itema => itema%2 === 0);
+const reducea = filtraa.reduce((acc, item) => item + acc);
+console.log(reducea);
+
+//Filtrar los numeros impares y mostrar como cadena
+const b = [1,2,3,4,5,6]
+const bcadena = b.filter(itemb => itemb%2 != 0).join(',');
+console.log(bcadena);
+
   }
 }
